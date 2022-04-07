@@ -1,0 +1,98 @@
+//banner
+.banner {
+    position: relative;
+
+    .row {
+        align-items: center;
+    }
+
+    &-media {
+        position: relative;
+
+        @include media-breakpoint-down(lg) {
+            background: $lime-green;
+            border-radius: 10px;
+        }
+
+        &::before {
+            @include media-breakpoint-up(xl) {
+                position: absolute;
+                content: '';
+                width: 1222px;
+                height: 560px;
+                top: -182px;
+                left: -92px;
+                background: $lime-green;
+                z-index: -1;
+                border-radius: 403px;
+                transform: rotate(-42deg);
+            }
+
+            @include media-breakpoint-up(xxl) {
+                height: 773px;
+                top: -108px;
+            }
+
+        }
+    }
+
+    &-content {
+        max-width: 608px;
+    }
+
+    .section-title {
+        line-height: 1;
+
+        span {
+            @include font-size(1.125rem);
+
+            @include media-breakpoint-up(lg) {
+                @include font-size(1.25rem);
+
+            }
+        }
+    }
+
+    .btn-wrap {
+        .btn-secondary {
+            @include media-breakpoint-down(md) {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+
+    .social-links {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include media-breakpoint-down(lg){
+            display: none;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 1.3rem;
+
+            li {
+                padding-bottom: 0.5rem;
+
+                a {
+                    color: $black;
+                    padding: 0.5rem;
+                    border-radius: 50%;
+                    transition: all 0.3s ease-in-out;
+
+                    &:focus,
+                    &:hover {
+                        text-decoration: none;
+                        background-color: $lime-green;
+                        border-radius: 50%;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
